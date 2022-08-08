@@ -25,8 +25,9 @@ def user(request, pk):
     context = {'user': user, 'sales': sales, 'total_sales': total_sales}
     return render(request, 'accounts/user.html', context)
 
-def createSale(request):
-	form = SalesForm()
+def createSale(request, pk):
+	user = User.objects.get(id=pk)
+	form = SalesForm(initial = {'user': user})
 	if request.method == 'POST':
 		# print('Printing POST:', request.POST)
 		form = SalesForm(request.POST)
