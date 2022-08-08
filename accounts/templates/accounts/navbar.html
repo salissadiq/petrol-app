@@ -19,16 +19,20 @@
                 Products
               </a>
             </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="px-3 py-2 border-bottom mb-3">
-      <div class="container d-flex flex-wrap justify-content-end">
+            <li>
+              <a href="#" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
 
-        <div class="text-end">
-          <button type="button" class="btn btn-light text-dark me-2">Login</button>
-          <button type="button" class="btn btn-primary">Sign-up</button>
+                Hello, {{request.user}}
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'logout' %}" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
+                Logout
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
