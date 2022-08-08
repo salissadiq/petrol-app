@@ -23,12 +23,6 @@ class Product(models.Model):
     
 
 class Sales(models.Model):
-	STATUS = (
-			('Pending', 'Pending'),
-			('Out for delivery', 'Out for delivery'),
-			('Delivered', 'Delivered'),
-			)
-
 	user = models.ForeignKey(User, null=True, on_delete= models.SET_NULL)
 	product = models.ForeignKey(Product, null=True, on_delete= models.SET_NULL)
 	date_created = models.DateTimeField(auto_now_add=True, null=True)
