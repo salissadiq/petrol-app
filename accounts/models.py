@@ -27,3 +27,5 @@ class Sales(models.Model):
 	product = models.ForeignKey(Product, null=True, on_delete= models.SET_NULL)
 	date_created = models.DateTimeField(auto_now_add=True, null=True)
 	amount = models.IntegerField(null=True, default=0)
+
+	

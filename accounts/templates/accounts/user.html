@@ -37,18 +37,7 @@
 
 
 <br>
-<div class="row">
-	<div class="col">
-		<div class="card card-body">
-			<form method="get">
 
-		    <button class="btn btn-primary" type="submit">Search</button>
-		  </form>
-		</div>
-	</div>
-	
-</div>
-<br>
 
 <div class="row">
 	<div class="col-md">
@@ -61,6 +50,8 @@
 					<th>Amount</th>
 					<th>Total</th>
 					<th>Date created</th>
+					<th>Update</th>
+					<th>Remove</th>
 				</tr>
 				{% for sale in sales %}
 					<tr>
@@ -70,6 +61,8 @@
 						<td>{{ sale.amount}}</td>
 						<td>&#8358; {{ sale.amount | mul:sale.product.price}}</td>
 						<td>{{ sale.date_created}}</td>
+						<td> <a href="{% url 'update_sale' sale.id %}" class="btn btn-primary">Update Sale</a> </td>
+						<td> <a href="{% url 'delete_sale' sale.id %}" class="btn btn-danger">Remove Sale</a> </td>
 					</tr>
 				{% endfor %}
 
